@@ -1,22 +1,49 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: sans-serif, 'Material Icons';
 }
 
-.App-logo {
-  height: 40vmin;
+.Wordplay {
+  color: slateblue;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  margin-right: 3px;
+}
+.material-icons {
+  color: slateblue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('../../fonts/MaterialIcons-Regular');
 }
 
-.App-link {
-  color: #09d3ac;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }

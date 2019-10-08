@@ -1,0 +1,36 @@
+nav {
+    background-color: #fafafa;
+    box-shadow: 4px 4px 4px #cecece;
+}
+
+.brand-logo {
+    font-family: 'Lovelo Black';
+    font-weight: bolder;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: #535353 !important;
+}
+
+.brand-logo:hover {
+    animation: logo 2s;
+    border-left: 2px solid slateblue;
+    border-right: 2px solid slateblue;
+}
+
+@keyframes logo {
+}
+
+nav ul li a {
+    color: slateblue;
+    font-family: 'Montserrat';
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+@media(min-width: 968px) {
+    .brand-logo {
+        margin-left: -30%;
+    }
+}
