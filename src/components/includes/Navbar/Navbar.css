@@ -29,7 +29,7 @@ nav ul li a {
 
 }
 
-@media(min-width: 968px) {
+@media(min-width: 992px) {
     .brand-logo {
         margin-left: -30%;
     }

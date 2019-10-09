@@ -1,0 +1,28 @@
+form {
+    width: 35%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+p a {
+    color: white;
+    text-align: left;
+}
+
+p a:hover {
+    text-decoration: underline aqua;
+}
+
+@media (max-width: 768px) {
+    Form {
+        width: 45%;
+    }
+}
+
+@media (max-width: 512px) {
+    Form {
+        width: 65%;
+    }
+}

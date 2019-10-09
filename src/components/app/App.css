@@ -11,7 +11,12 @@
   font-size: 1.2em;
   margin-right: 3px;
 }
-.material-icons {
+
+nav .material-icons {
+  color: slateblue;
+}
+
+.brand-logo .material-icons {
   color: slateblue;
 }
 

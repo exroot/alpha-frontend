@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navbar, Loader } from '../includes';
+import NotesForm from '../Notes/NotesForm/NotesForm';
+
 import './App.css';
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Loader />
+      <NotesForm method="POST" action="/notes" />
     </div>
   );
 }
