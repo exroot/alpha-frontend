@@ -28,6 +28,12 @@ nav .material-icons {
     local('../../fonts/MaterialIcons-Regular');
 }
 
+form {
+  margin-top: 10vh;
+  animation: fade-in 0.55s linear 0ms;
+}
+
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -51,4 +57,15 @@ nav .material-icons {
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+      transform: translateX(500px);
+  }
+  100% {
+      opacity: 1;
+      transform: rotateX(0px);
+  }
 }

@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar, Loader } from '../includes';
-import { NotesCard } from '../notes';
+import React, {useState, useEffect } from 'react';
+import { BrowserRouter , Route, Switch } from 'react-router-dom';
 import notesServices from '../../services/notes';
+
+/*** Components ***/
+import { Navbar, Loader } from '../includes';
+import AuthForm from '../auth/AuthForm';
+import { NotesLayout } from '../notes';
 
 import './App.css';
 
 const App = () => {
+
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -13,14 +18,18 @@ const App = () => {
       setNotes(notes);
     })
   }, []);
-  
-  const fetchedNotes = notes.map((note) => <NotesCard key={ note.id } title={ note.title } body={ note.body } /> );
+
   return (
-    <div className="App">
-      <Navbar />
-      { fetchedNotes }
-      <Loader />
-    </div>
+      <div className="App">
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route exact path="/signin" component={AuthForm}/>
+            <Route exact path="/notes" render={(props) => <NotesLayout notes={notes} /> }/>
+          </Switch>
+          <Loader />
+        </BrowserRouter>
+      </div>
   );
 }
 
