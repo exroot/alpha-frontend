@@ -20,17 +20,19 @@ nav .material-icons {
   color: slateblue;
 }
 
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
   src: local('Material Icons'),
     local('../../fonts/MaterialIcons-Regular');
-}
-
-form {
-  margin-top: 10vh;
-  animation: fade-in 0.55s linear 0ms;
 }
 
 
@@ -62,10 +64,25 @@ form {
 @keyframes fade-in {
   0% {
       opacity: 0;
-      transform: translateX(500px);
+      transform: translateY(20vh);
   }
   100% {
       opacity: 1;
       transform: rotateX(0px);
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+      opacity: 0;
+      transform: translateX(500px);
+  }
+  50% {
+      opacity: 1;
+      transform: rotateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(-500px);
   }
 }
