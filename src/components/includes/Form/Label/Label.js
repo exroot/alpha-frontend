@@ -11,7 +11,7 @@ const Label = styled.label`
 `;
 
 const LabelComponent = props => {
-    return <Label for={props.for}>{props.children}</Label>;
+    return <Label>{ props.children }</Label>;
 }
 
 export default LabelComponent;

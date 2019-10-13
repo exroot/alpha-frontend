@@ -6,6 +6,12 @@ form {
     margin-bottom: 15px;
 }
 
+
+form {
+    margin-top: 5vh;
+    animation: fade-in 0.55s linear 0ms;
+}
+
 p a {
     color: white;
     text-align: left;

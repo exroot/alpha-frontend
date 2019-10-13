@@ -20,7 +20,7 @@ const Input = styled.input`
 `;
 
 const InputComponent = props => {
-    return <Input placeholder={props.placeholder} type={props.type} name={props.name} required></Input>
+    return <Input placeholder={props.placeholder} onChange={props.onChange} type={props.type} name={props.name} required></Input>
 }
 
 export default InputComponent;

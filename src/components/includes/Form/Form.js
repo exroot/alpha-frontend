@@ -13,7 +13,7 @@ const Form = styled.form`
 
 const FormComponent = props => {
     return (
-        <Form method={props.method} action={props.action}>
+        <Form onSubmit={props.onSubmit}>
             {props.children}
         </Form>
     );
