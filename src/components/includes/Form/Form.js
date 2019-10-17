@@ -13,9 +13,11 @@ const Form = styled.form`
 
 const FormComponent = props => {
     return (
-        <Form onSubmit={props.onSubmit}>
-            {props.children}
-        </Form>
+        <div className="wrapper">
+            <Form onSubmit={props.onSubmit}>
+                {props.children}
+            </Form>
+        </div>
     );
 }
 

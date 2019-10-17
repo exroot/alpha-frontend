@@ -27,6 +27,10 @@ nav .material-icons {
   transform: translate(-50%, -50%);
 }
 
+.wrapper {
+  padding-top: 18vh;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

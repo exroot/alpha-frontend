@@ -1,22 +1,22 @@
-import React, {useState, useEffect } from 'react';
-import { BrowserRouter , Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.css';
 
 /*** Services ***/
 import noteServices from '../../services/notes';
 
 /*** Components ***/
 import { Navbar, Loader, ErrorHandler } from '../includes';
-import AuthForm from '../auth/AuthForm';
+import { LoginForm } from '../auth'; 
 import { NotesLayout } from '../notes';
 
-import './App.css';
-
 const App = () => {
-  const [errorMessage, setErrorMessage] = useState(null);
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
   const [notes, setNotes] = useState([]);
   const [isAuth, setAuth] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  
 
   /* Load all notes if user is valid (has logged) */
   useEffect(() => {
@@ -36,7 +36,6 @@ const App = () => {
       setAuth(true);
       window.localStorage.setItem('loggedMyNotesUser', JSON.stringify(user));
       noteServices.setToken(user.token);
-	    setErrorMessage(null);
     }
   }, [user]);
 
@@ -53,10 +52,9 @@ const App = () => {
 
   useEffect(() => {
     if (errorMessage) {
-      /* Clear error message from our layout after timeout */
       setTimeout(() => {
         setErrorMessage(null);
-      }, 3500);
+      }, 3000);
     }
   }, [errorMessage]);
 
@@ -71,10 +69,10 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           <Navbar isAuth={ isAuth } logoutHandler={ logoutHandler } redirect={'/login'}/>
-          { errorMessage && <ErrorHandler> { errorMessage } </ErrorHandler> }
+          { errorMessage && <ErrorHandler>{ errorMessage }</ErrorHandler> }
           <Switch>
             { !user ?
-              <Route exact path="/login" render={( props ) => <AuthForm {...props} setUser={ setUser } setErrorMessage={ setErrorMessage } /> } />
+              <Route exact path="/login" render={( props ) => <LoginForm setErrorMessage={ setErrorMessage } {...props} setUser={ setUser } /> } />
             :
               <Route exact path="/notes" render={(props) => loader ? <Loader user={user.email} /> : <NotesLayout notes={notes} /> }/>
             }

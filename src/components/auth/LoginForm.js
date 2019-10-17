@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Form, Button } from '../includes';
 import InputComponent from '../includes/Form/Input/Input';
 import LabelComponent from '../includes/Form/Label/Label';
-import login from '../../services/auth';
+import { login } from '../../services';
 
-const AuthForm = props => {
+const LoginForm = props => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,6 +23,7 @@ const AuthForm = props => {
             setEmail('');
             props.history.push('/notes');
         } catch (err) {
+            console.log(err.request);
             if (err.request.status) {
                 /* 
                     If error has an manegable status 
@@ -34,8 +35,9 @@ const AuthForm = props => {
                     default: props.setErrorMessage("Server error"); break;
                 }
             }
-            else
+            else {
                 props.setErrorMessage(err);
+            }
         }
     }
     return (
@@ -55,4 +57,4 @@ const AuthForm = props => {
     </Form>)
 }
 
-export default AuthForm;
+export default LoginForm;
